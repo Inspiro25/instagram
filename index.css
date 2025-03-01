@@ -146,3 +146,24 @@ body {
 .app-buttons img {
     height: 40px;
 }
+
+/* OTP Section */
+.otp-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.otp-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.otp-section p {
+    font-size: 14px;
+    color: #8e8e8e;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
