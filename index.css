@@ -86,18 +86,37 @@ pre {
 }
 
 /* Facebook Login */
+/* Facebook Login Button */
 .btn1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1877f2;
-    color: #fff;
-    border-radius: 5px;
-    padding: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn1 img {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.btn2 {
+    background-color: transparent;
+    border: none;
     font-size: 14px;
+    color: #385185;
     font-weight: bold;
     cursor: pointer;
+    text-align: center;
 }
+
+.btn2:hover {
+    text-decoration: underline;
+}
+
 
 .icon {
     width: 20px;
